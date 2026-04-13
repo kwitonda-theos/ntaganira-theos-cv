@@ -8,48 +8,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --bg-color: #0b0f19;
+            --text-color: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+            --bg-subtle: #111827;
+            --accent-color: #ffffff;
+        }
+
+        body.light {
+            --bg-color: #ffffff;
+            --text-color: #111827;
+            --text-muted: #6b7280;
+            --border-color: #f3f4f6;
+            --bg-subtle: #f9fafb;
+            --accent-color: #111827;
+        }
+
         body {
-            background-color: #ffffff;
-            color: #111827;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .text-gray-muted { color: #6b7280; }
-        .border-subtle { border-color: #f3f4f6; }
-        .bg-subtle { background-color: #f9fafb; }
+        .text-gray-muted { color: var(--text-muted); }
+        .border-subtle { border-color: var(--border-color); }
+        .bg-subtle { background-color: var(--bg-subtle); }
         .hero-title {
             letter-spacing: -0.05em;
             line-height: 1.1;
         }
         .metric-card {
-            border-left: 4px solid #111827;
+            border-left: 4px solid var(--accent-color);
             padding-left: 1.5rem;
         }
-        .lang-btn {
+        .lang-btn, .theme-btn {
             transition: all 0.2s ease;
+            border-color: var(--accent-color);
         }
-        .lang-btn:hover {
-            background-color: #111827;
-            color: #ffffff;
+        .lang-btn:hover, .theme-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
         }
         ::selection {
-            background-color: #111827;
-            color: #ffffff;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
         }
+        .bg-nav { background-color: rgba(11, 15, 25, 0.8); }
+        body.light .bg-nav { background-color: rgba(255, 255, 255, 0.8); }
     </style>
 </head>
 <body class="antialiased">
     <!-- Header/Nav -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-subtle">
+    <nav class="sticky top-0 z-50 bg-nav backdrop-blur-md border-b border-subtle">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="font-extrabold text-xl tracking-tighter">NT.</div>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 md:gap-6">
                 <div class="hidden md:flex gap-6 text-sm font-medium">
                     <a href="#about" class="hover:text-gray-400 transition">About</a>
                     <a href="#experience" class="hover:text-gray-400 transition">Experience</a>
                     <a href="#skills" class="hover:text-gray-400 transition">Skills</a>
                 </div>
-                <button id="lang-toggle" class="lang-btn border border-black px-3 py-1 text-xs font-bold uppercase rounded">
+                <button id="theme-toggle" class="theme-btn border px-3 py-1 text-xs font-bold uppercase rounded flex items-center gap-2">
+                    <i id="theme-icon" class="fas fa-sun"></i>
+                </button>
+                <button id="lang-toggle" class="lang-btn border px-3 py-1 text-xs font-bold uppercase rounded">
                     RW
                 </button>
                 <div class="flex items-center gap-2 text-xs font-bold bg-subtle px-3 py-1 rounded-full border border-subtle">
@@ -64,13 +89,13 @@
     <section class="max-w-5xl mx-auto px-6 pt-24 pb-20 border-b border-subtle">
         <div class="max-w-3xl">
             <h1 id="hero-title" class="hero-title text-6xl md:text-8xl font-extrabold mb-8">
-                Empowering the future through <span class="text-gray-400">code and data.</span>
+                Empowering the future through <span class="text-gray-500">code and data.</span>
             </h1>
             <p id="hero-subtitle" class="text-xl md:text-2xl text-gray-muted leading-relaxed mb-10">
-                I am <span class="text-black font-bold">Ntaganira kwitonda theos</span>, a Computer & Software Engineer based in Kigali, Rwanda. I build high-impact solutions that bridge the gap between complex problems and elegant software.
+                I am <span class="font-bold" style="color: var(--accent-color)">Ntaganira kwitonda theos</span>, a Computer & Software Engineer based in Kigali, Rwanda. I build high-impact solutions that bridge the gap between complex problems and elegant software.
             </p>
             <div class="flex flex-wrap gap-4">
-                <a href="mailto:Kwitondatheos@gmail.com?subject=Hello%20Theos&body=Hello%20Theos" class="bg-black text-white px-8 py-4 font-bold rounded hover:bg-gray-800 transition flex items-center gap-3">
+                <a href="mailto:Kwitondatheos@gmail.com?subject=Hello%20Theos&body=Hello%20Theos" class="px-8 py-4 font-bold rounded transition flex items-center gap-3" style="background-color: var(--accent-color); color: var(--bg-color)">
                     <span id="cta-text">Get in touch</span>
                     <i class="fas fa-arrow-right text-sm"></i>
                 </a>
@@ -291,6 +316,28 @@
             currentLang = currentLang === 'en' ? 'rw' : 'en';
             updateLang();
         });
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light');
+            const isLight = body.classList.contains('light');
+            themeIcon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // Initialize Theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light');
+            themeIcon.className = 'fas fa-moon';
+        } else {
+            // Default is dark (no class needed based on our CSS)
+            themeIcon.className = 'fas fa-sun';
+        }
 
         // View Counter using CountAPI
         async function updateCounter() {
