@@ -13,361 +13,543 @@
             --text-color: #f3f4f6;
             --text-muted: #9ca3af;
             --border-color: #1f2937;
-            --bg-subtle: #111827;
-            --accent-color: #ffffff;
-        }
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Ntaganira kwitonda theos | Engineer & Visionary</title>
+                <script src="https://cdn.tailwindcss.com"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+                <style>
+                    :root {
+                        --bg-color: #0b0f19;
+                        --text-color: #f3f4f6;
+                        --text-muted: #9ca3af;
+                        --border-color: #1f2937;
+                        --bg-subtle: #111827;
+                        --accent-color: #ffffff;
+                    }
 
-        body.light {
-            --bg-color: #ffffff;
-            --text-color: #111827;
-            --text-muted: #6b7280;
-            --border-color: #f3f4f6;
-            --bg-subtle: #f9fafb;
-            --accent-color: #111827;
-        }
+                    body.light {
+                        --bg-color: #ffffff;
+                        --text-color: #111827;
+                        --text-muted: #6b7280;
+                        --border-color: #f3f4f6;
+                        --bg-subtle: #f9fafb;
+                        --accent-color: #111827;
+                    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .text-gray-muted { color: var(--text-muted); }
-        .border-subtle { border-color: var(--border-color); }
-        .bg-subtle { background-color: var(--bg-subtle); }
-        .hero-title {
-            letter-spacing: -0.05em;
-            line-height: 1.1;
-        }
-        .metric-card {
-            border-left: 4px solid var(--accent-color);
-            padding-left: 1.5rem;
-        }
-        .lang-btn, .theme-btn {
-            transition: all 0.2s ease;
-            border-color: var(--accent-color);
-        }
-        .lang-btn:hover, .theme-btn:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-        }
-        ::selection {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-        }
-        .bg-nav { background-color: rgba(11, 15, 25, 0.8); }
-        body.light .bg-nav { background-color: rgba(255, 255, 255, 0.8); }
-    </style>
-</head>
-<body class="antialiased">
-    <!-- Header/Nav -->
-    <nav class="sticky top-0 z-50 bg-nav backdrop-blur-md border-b border-subtle">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-extrabold text-xl tracking-tighter">Ntaganira Kwitonda Theos</div>
-            <div class="flex items-center gap-4 md:gap-6">
-                <div class="hidden md:flex gap-6 text-sm font-medium">
-                    <a href="#about" class="hover:text-gray-400 transition">About</a>
-                    <a href="#experience" class="hover:text-gray-400 transition">Experience</a>
-                    <a href="#skills" class="hover:text-gray-400 transition">Skills</a>
-                </div>
-                <button id="theme-toggle" class="theme-btn border px-3 py-1 text-xs font-bold uppercase rounded flex items-center gap-2">
-                    <i id="theme-icon" class="fas fa-sun"></i>
-                </button>
-                <button id="lang-toggle" class="lang-btn border px-3 py-1 text-xs font-bold uppercase rounded">
-                    RW
-                </button>
-                <div class="flex items-center gap-2 text-xs font-bold bg-subtle px-3 py-1 rounded-full border border-subtle">
-                    <i class="fas fa-user-friends text-[10px]"></i>
-                    <span id="view-count">...</span> <span id="view-label">VISITORS</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+                    body {
+                        background-color: var(--bg-color);
+                        color: var(--text-color);
+                        font-family: 'Plus Jakarta Sans', sans-serif;
+                        scroll-behavior: smooth;
+                        transition: background-color 0.3s ease, color 0.3s ease;
+                    }
+                    .text-gray-muted { color: var(--text-muted); }
+                    .border-subtle { border-color: var(--border-color); }
+                    .bg-subtle { background-color: var(--bg-subtle); }
+                    .hero-title {
+                        letter-spacing: -0.05em;
+                        line-height: 1.1;
+                    }
+                    .hero-wrap {
+                        background: radial-gradient(circle at 74% 42%, rgba(115, 94, 255, 0.18), transparent 46%), linear-gradient(90deg, #020b24 0%, #030f32 60%, #05163f 100%);
+                    }
+                    .hero-grid {
+                        display: grid;
+                        grid-template-columns: minmax(0, 1.25fr) minmax(280px, 420px);
+                        align-items: center;
+                        gap: 2.5rem;
+                    }
+                    .hero-copy {
+                        max-width: 700px;
+                    }
+                    .hero-image-shell {
+                        width: 100%;
+                        max-width: 390px;
+                        aspect-ratio: 4 / 5;
+                        border-radius: 1.5rem;
+                        border: 1px solid rgba(170, 184, 255, 0.35);
+                        background: linear-gradient(150deg, rgba(13, 29, 68, 0.9), rgba(10, 18, 44, 0.55));
+                        padding: 10px;
+                        margin-inline: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transform: translateY(0);
+                        animation: hero-card-enter 900ms ease-out, hero-card-float 6s ease-in-out 1s infinite;
+                        transition: transform 0.35s ease;
+                    }
+                    .hero-image-shell img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 1.15rem;
+                        border: 1px solid rgba(115, 129, 202, 0.5);
+                        animation: hero-image-reveal 1100ms ease-out;
+                        transition: transform 0.45s ease;
+                    }
+                    .hero-image-shell:hover {
+                        transform: translateY(-6px);
+                    }
+                    .hero-image-shell:hover img {
+                        transform: scale(1.03);
+                    }
+                    @keyframes hero-card-enter {
+                        from {
+                            opacity: 0;
+                            transform: translateY(22px) scale(0.98);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0) scale(1);
+                        }
+                    }
+                    @keyframes hero-image-reveal {
+                        from {
+                            opacity: 0;
+                            transform: scale(1.06);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+                    @keyframes hero-card-float {
+                        0%,
+                        100% {
+                            transform: translateY(0);
+                        }
+                        50% {
+                            transform: translateY(-8px);
+                        }
+                    }
+                    @media (max-width: 1024px) {
+                        .hero-grid {
+                            grid-template-columns: 1fr;
+                            gap: 2rem;
+                        }
+                        .hero-copy {
+                            max-width: 100%;
+                        }
+                        .hero-image-shell {
+                            max-width: 320px;
+                        }
+                    }
+                    .metric-card {
+                        border-left: 4px solid var(--accent-color);
+                        padding-left: 1.5rem;
+                    }
+                    .lang-btn, .theme-btn {
+                        transition: all 0.2s ease;
+                        border-color: var(--accent-color);
+                    }
+                    .lang-btn:hover, .theme-btn:hover {
+                        background-color: var(--accent-color);
+                        color: var(--bg-color);
+                    }
+                    ::selection {
+                        background-color: var(--accent-color);
+                        color: var(--bg-color);
+                    }
+                    .site-nav {
+                        position: relative;
+                        background: radial-gradient(circle at 74% 42%, rgba(115, 94, 255, 0.14), transparent 52%), linear-gradient(90deg, rgba(2, 11, 36, 0.56) 0%, rgba(3, 15, 50, 0.48) 60%, rgba(5, 22, 63, 0.56) 100%);
+                        backdrop-filter: blur(14px) saturate(130%);
+                        -webkit-backdrop-filter: blur(14px) saturate(130%);
+                        box-shadow: none;
+                    }
+                    .site-nav > div {
+                        position: relative;
+                        z-index: 2;
+                    }
+                    .site-nav::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        pointer-events: none;
+                        background: none;
+                    }
+                    body.light .site-nav {
+                        background: linear-gradient(90deg, rgba(255, 255, 255, 0.58) 0%, rgba(246, 250, 255, 0.5) 60%, rgba(240, 245, 255, 0.58) 100%);
+                        box-shadow: none;
+                    }
+                    body.light .site-nav::before {
+                        background: none;
+                    }
+                </style>
+            </head>
+            <body class="antialiased">
+                <!-- Header/Nav -->
+                <nav class="site-nav sticky top-0 z-50">
+                    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+                        <div class="font-extrabold text-xl tracking-tighter">Ntaganira Kwitonda Theos</div>
+                        <div class="flex items-center gap-4 md:gap-6">
+                            <div class="hidden md:flex gap-6 text-sm font-medium">
+                                <a href="#about" class="hover:text-gray-400 transition">About</a>
+                                <a href="#experience" class="hover:text-gray-400 transition">Experience</a>
+                                <a href="#skills" class="hover:text-gray-400 transition">Skills</a>
+                            </div>
+                            <button id="theme-toggle" class="theme-btn border px-3 py-1 text-xs font-bold uppercase rounded flex items-center gap-2">
+                                <i id="theme-icon" class="fas fa-sun"></i>
+                            </button>
+                            <button id="lang-toggle" class="lang-btn border px-3 py-1 text-xs font-bold uppercase rounded">
+                                RW
+                            </button>
+                            <div class="flex items-center gap-2 text-xs font-bold bg-subtle px-3 py-1 rounded-full border border-subtle">
+                                <i class="fas fa-user-friends text-[10px]"></i>
+                                <span id="view-count">...</span> <span id="view-label">VISITORS</span>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
 
-    <!-- Hero Section -->
-    <section class="max-w-5xl mx-auto px-6 pt-24 pb-20 border-b border-subtle">
-        <div class="max-w-3xl">
-            <h1 id="hero-title" class="hero-title text-6xl md:text-8xl font-extrabold mb-8">
-                Empowering the future through <span class="text-gray-500">code and data.</span>
-            </h1>
-            <p id="hero-subtitle" class="text-xl md:text-2xl text-gray-muted leading-relaxed mb-10">
-                I am <span class="font-bold" style="color: var(--accent-color)">Ntaganira kwitonda theos</span>, a Computer & Software Engineer based in Kigali, Rwanda. I build high-impact solutions that bridge the gap between complex problems and elegant software.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="mailto:Kwitondatheos@gmail.com?subject=Hello%20Theos&body=Hello%20Theos" class="px-8 py-4 font-bold rounded transition flex items-center gap-3" style="background-color: var(--accent-color); color: var(--bg-color)">
-                    <span id="cta-text">Get in touch</span>
-                    <i class="fas fa-arrow-right text-sm"></i>
-                </a>
-                <div class="flex items-center gap-4 px-4 text-xl">
-                    <a href="https://github.com/kwitonda-theos" target="_blank" class="hover:text-gray-400 transition"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ntaganira-kwitonda-theos" target="_blank" class="hover:text-gray-400 transition"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Hero Section -->
+                <section class="hero-wrap border-b border-subtle">
+                    <div class="max-w-6xl mx-auto px-6 pt-20 pb-20 hero-grid">
+                        <div class="hero-copy text-left">
+                            <h1 id="hero-title" class="hero-title text-5xl md:text-7xl font-extrabold mb-6">
+                                Empowering the future through <span class="text-gray-500">code and data.</span>
+                            </h1>
+                            <p id="hero-subtitle" class="text-xl md:text-2xl text-gray-muted leading-relaxed mb-8">
+                                I am <span class="font-bold" style="color: var(--accent-color)">Ntaganira kwitonda theos</span>, a Computer & Software Engineer based in Kigali, Rwanda. I build high-impact solutions that bridge the gap between complex problems and elegant software.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="mailto:Kwitondatheos@gmail.com?subject=Hello%20Theos&body=Hello%20Theos" class="px-8 py-4 font-bold rounded transition flex items-center gap-3" style="background-color: var(--accent-color); color: var(--bg-color)">
+                                    <span id="cta-text">Get in touch</span>
+                                    <i class="fas fa-arrow-right text-sm"></i>
+                                </a>
+                                <div class="flex items-center gap-4 px-4 text-xl">
+                                    <a href="https://github.com/kwitonda-theos" target="_blank" class="hover:text-gray-400 transition"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/ntaganira-kwitonda-theos" target="_blank" class="hover:text-gray-400 transition"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/kwitonda.theos/" target="_blank" class="hover:text-gray-400 transition"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-image-shell">
+                            <img src="cv picture.PNG" alt="Ntaganira Kwitonda Theos" class="shadow-2xl">
+                        </div>
+                    </div>
+                </section>
 
-    <!-- Stats/Impact Section (Emre Varol Style) -->
-    <section class="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-subtle">
-        <div class="metric-card">
-            <div class="text-4xl font-extrabold mb-1">2028</div>
-            <div id="metric-1" class="text-sm font-bold uppercase tracking-widest text-gray-muted">Expected Graduation</div>
-        </div>
-        <div class="metric-card">
-            <div class="text-4xl font-extrabold mb-1">60/60</div>
-            <div id="metric-2" class="text-sm font-bold uppercase tracking-widest text-gray-muted">Advanced Certificate Grade</div>
-        </div>
-        <div class="metric-card">
-            <div class="text-4xl font-extrabold mb-1">2024</div>
-            <div id="metric-3" class="text-sm font-bold uppercase tracking-widest text-gray-muted">ALX Data Certification</div>
-        </div>
-    </section>
+                <!-- Stats/Impact Section (Emre Varol Style) -->
+                <section class="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-subtle">
+                    <div class="metric-card">
+                        <div class="text-4xl font-extrabold mb-1">2028</div>
+                        <div id="metric-1" class="text-sm font-bold uppercase tracking-widest text-gray-muted">Expected Graduation</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="text-4xl font-extrabold mb-1">60/60</div>
+                        <div id="metric-2" class="text-sm font-bold uppercase tracking-widest text-gray-muted">Advanced Certificate Grade</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="text-4xl font-extrabold mb-1">2024</div>
+                        <div id="metric-3" class="text-sm font-bold uppercase tracking-widest text-gray-muted">ALX Data Certification</div>
+                    </div>
+                </section>
 
-    <!-- About Section -->
-    <section id="about" class="max-w-5xl mx-auto px-6 py-20 border-b border-subtle grid grid-cols-1 md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-            <h2 id="about-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-4">The Narrative</h2>
-            <h3 id="about-subheading" class="text-3xl font-bold leading-tight">A journey of technical excellence.</h3>
-        </div>
-        <div class="md:col-span-8">
-            <p id="about-text" class="text-xl text-gray-muted leading-relaxed mb-6">
-                Driven by a passion for hardware, software development, and problem-solving, I am currently pursuing a degree in Computer & Software Engineering at the University of Rwanda. My mission is to apply academic rigor to real-world engineering challenges.
-            </p>
-            <p id="about-text-2" class="text-xl text-gray-muted leading-relaxed">
-                From data collection at CIDRA ltd to professional web design and data analytics, I focus on building practical technology solutions that matter.
-            </p>
-        </div>
-    </section>
+                <!-- About Section -->
+                <section id="about" class="max-w-5xl mx-auto px-6 py-20 border-b border-subtle grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div class="md:col-span-4">
+                        <h2 id="about-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-4">The Narrative</h2>
+                        <h3 id="about-subheading" class="text-3xl font-bold leading-tight">A journey of technical excellence.</h3>
+                    </div>
+                    <div class="md:col-span-8">
+                        <p id="about-text" class="text-xl text-gray-muted leading-relaxed mb-6">
+                            Driven by a passion for hardware, software development, and problem-solving, I am currently pursuing a degree in Computer & Software Engineering at the University of Rwanda. My mission is to apply academic rigor to real-world engineering challenges.
+                        </p>
+                        <p id="about-text-2" class="text-xl text-gray-muted leading-relaxed">
+                            From data collection at CIDRA ltd to professional Graphics design and data analytics, I focus on building practical technology solutions that matter.
+                        </p>
+                    </div>
+                </section>
 
-    <!-- Experience & Education Grid -->
-    <section id="experience" class="max-w-5xl mx-auto px-6 py-20 border-b border-subtle grid grid-cols-1 md:grid-cols-2 gap-20">
-        <div>
-            <h2 id="exp-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-10">Experience</h2>
-            <div class="space-y-12">
-                <div>
-                    <h4 id="exp-role" class="text-xl font-bold mb-1">Data Collector & Enumerator</h4>
-                    <p class="text-sm font-bold mb-4">CIDRA ltd • 2024</p>
-                    <p id="exp-desc" class="text-gray-muted leading-relaxed">Leveraged technical data collection methodologies to gather and process critical information for integrated development and action.</p>
-                </div>
-            </div>
-        </div>
-        <div>
-            <h2 id="edu-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-10">Education</h2>
-            <div class="space-y-12">
-                <div>
-                    <h4 class="text-xl font-bold mb-1">University of Rwanda</h4>
-                    <p id="edu-sub-1" class="text-sm font-bold mb-2">B.Sc. in Computer & Software Engineering</p>
-                    <p class="text-sm text-gray-muted">2025 — 2028</p>
-                </div>
-                <div>
-                    <h4 class="text-xl font-bold mb-1">ES.kanombe/EFOTEC</h4>
-                    <p id="edu-sub-2" class="text-sm font-bold mb-2">Advanced Certificate (PCM)</p>
-                    <p class="text-sm text-gray-muted">2020 — 2023</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Experience & Education Grid -->
+                <section id="experience" class="max-w-5xl mx-auto px-6 py-20 border-b border-subtle grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <div>
+                        <h2 id="exp-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-10">Experience</h2>
+                        <div class="space-y-12">
+                            <div>
+                                <h4 id="exp-role" class="text-xl font-bold mb-1">Data Collector & Enumerator</h4>
+                                <p class="text-sm font-bold mb-4">CIDRA ltd • 2024</p>
+                                <p id="exp-desc" class="text-gray-muted leading-relaxed">Leveraged technical data collection methodologies to gather and process critical information for integrated development and action.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 id="edu-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-10">Education</h2>
+                        <div class="space-y-12">
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">University of Rwanda</h4>
+                                <p id="edu-sub-1" class="text-sm font-bold mb-2">B.Sc. in Computer & Software Engineering</p>
+                                <p class="text-sm text-gray-muted">2025 — 2028</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">ES.kanombe/EFOTEC</h4>
+                                <p id="edu-sub-2" class="text-sm font-bold mb-2">Advanced Certificate (PCM)</p>
+                                <p class="text-sm text-gray-muted">2020 — 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="max-w-5xl mx-auto px-6 py-20 border-b border-subtle">
-        <h2 id="skills-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-10">Technical Mastery</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="p-8 bg-subtle rounded border border-subtle hover:border-black transition">
-                <i class="fas fa-chart-pie text-2xl mb-6"></i>
-                <h4 id="skill-1" class="font-bold">Data Analytics</h4>
-            </div>
-            <div class="p-8 bg-subtle rounded border border-subtle hover:border-black transition">
-                <i class="fas fa-layer-group text-2xl mb-6"></i>
-                <h4 id="skill-2" class="font-bold">Web Development</h4>
-            </div>
-            <div class="p-8 bg-subtle rounded border border-subtle hover:border-black transition">
-                <i class="fas fa-bezier-curve text-2xl mb-6"></i>
-                <h4 id="skill-3" class="font-bold">Web Design</h4>
-            </div>
-            <div class="p-8 bg-subtle rounded border border-subtle hover:border-black transition">
-                <i class="fas fa-language text-2xl mb-6"></i>
-                <h4 id="skill-4" class="font-bold">English Proficiency</h4>
-            </div>
-        </div>
-    </section>
+                <!-- Skills Section -->
+                <section id="skills" class="max-w-5xl mx-auto px-6 py-20 border-b border-subtle">
+                    <h2 id="skills-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-10">Technical Mastery</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="p-8 bg-subtle rounded border border-subtle hover:border-black transition">
+                            <i class="fas fa-chart-pie text-2xl mb-6"></i>
+                            <h4 id="skill-1" class="font-bold mb-4">Data Analysis</h4>
+                            <ul class="text-xs text-gray-muted space-y-2">
+                                <li>• Data Querying (SQL)</li>
+                                <li>• Data Visualization (PowerBI)</li>
+                                <li>• Data Cleaning (Excel)</li>
+                            </ul>
+                        </div>
+                        <div class="p-8 bg-subtle rounded border border-subtle hover:border-black transition">
+                            <i class="fas fa-code text-2xl mb-6"></i>
+                            <h4 id="skill-2" class="font-bold mb-4">Software Engineering</h4>
+                            <ul class="text-xs text-gray-muted space-y-2">
+                                <li>• Frontend & Backend Web</li>
+                                <li>• Python & Django</li>
+                                <li>• Java & SpringBoot</li>
+                                <li>• C/C++ & Hardware</li>
+                            </ul>
+                        </div>
+                        <div class="p-8 bg-subtle rounded border border-subtle hover:border-black transition">
+                            <i class="fas fa-bezier-curve text-2xl mb-6"></i>
+                            <h4 id="skill-3" class="font-bold mb-4">Graphics Design</h4>
+                            <ul class="text-xs text-gray-muted space-y-2">
+                                <li>• Figma</li>
+                                <li>• Web Design</li>
+                                <li>• Canva</li>
+                            </ul>
+                        </div>
+                        <!-- <div class="p-8 bg-subtle rounded border border-subtle hover:border-black transition">
+                            <i class="fas fa-language text-2xl mb-6"></i>
+                            <h4 id="skill-4" class="font-bold">English Proficiency</h4>
+                        </div> -->
+                    </div>
+                </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="max-w-5xl mx-auto px-6 py-20">
-        <h2 id="contact-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-10">Direct Message</h2>
-        <div class="max-w-2xl">
-            <h3 id="contact-subheading" class="text-3xl font-bold mb-8">Have a project in mind? Let's talk.</h3>
-            <form name="contact" method="POST" data-netlify="true" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Name" required class="w-full bg-subtle border-b border-subtle p-4 outline-none focus:border-black dark:focus:border-white transition">
-                    <input type="email" name="email" placeholder="Email" required class="w-full bg-subtle border-b border-subtle p-4 outline-none focus:border-black dark:focus:border-white transition">
-                </div>
-                <textarea name="message" placeholder="Your Message" rows="4" required class="w-full bg-subtle border-b border-subtle p-4 outline-none focus:border-black dark:focus:border-white transition"></textarea>
-                <button type="submit" class="px-8 py-4 font-bold rounded transition w-full md:w-auto" style="background-color: var(--accent-color); color: var(--bg-color)">
-                    <span id="submit-text">Send Message</span>
-                </button>
-            </form>
-        </div>
-    </section>
+                <!-- Contact Form Section -->
+                <section id="contact" class="max-w-5xl mx-auto px-6 py-20">
+                    <h2 id="contact-heading" class="text-xs font-black uppercase tracking-[0.3em] text-gray-muted mb-10">Direct Message</h2>
+                    <div class="max-w-2xl">
+                        <h3 id="contact-subheading" class="text-3xl font-bold mb-8">Have a project in mind? Let's talk.</h3>
+                        <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <input type="text" name="name" placeholder="Name" required class="w-full bg-subtle border-b border-subtle p-4 outline-none focus:border-black dark:focus:border-white transition">
+                                <input type="email" name="email" placeholder="Email" required class="w-full bg-subtle border-b border-subtle p-4 outline-none focus:border-black dark:focus:border-white transition">
+                            </div>
+                            <textarea name="message" placeholder="Your Message" rows="4" required class="w-full bg-subtle border-b border-subtle p-4 outline-none focus:border-black dark:focus:border-white transition"></textarea>
+                            <button type="submit" class="px-8 py-4 font-bold rounded transition w-full md:w-auto" style="background-color: var(--accent-color); color: var(--bg-color)">
+                                <span id="submit-text">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </section>
 
-    <!-- Footer -->
-    <footer class="bg-subtle py-20 border-t border-subtle mt-20">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
-            <div class="max-w-xs">
-                <div class="font-extrabold text-2xl tracking-tighter mb-4">Ntaganira kwitonda theos</div>
-                <p id="footer-text" class="text-sm text-gray-muted leading-relaxed">
-                    Building the next generation of software solutions in Africa.
-                </p>
-            </div>
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">Connect</h5>
-                    <ul class="text-sm font-bold space-y-4">
-                        <li><a href="https://github.com/kwitonda-theos" target="_blank" class="hover:text-gray-400 transition">GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/ntaganira-kwitonda-theos" target="_blank" class="hover:text-gray-400 transition">LinkedIn</a></li>
-                        <li><a href="mailto:Kwitondatheos@gmail.com" class="hover:text-gray-400 transition">Email</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">Location</h5>
-                    <p class="text-sm font-bold">Kigali, Rwanda</p>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-5xl mx-auto px-6 mt-20 pt-8 border-t border-gray-200 flex justify-between items-center text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-            <div>&copy; 2026 Ntaganira kwitonda theos</div>
-         
-        </div>
-    </footer>
+                <!-- Footer -->
+                <footer class="bg-subtle py-20 border-t border-subtle mt-20">
+                    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
+                        <div class="max-w-xs">
+                            <div class="font-extrabold text-2xl tracking-tighter mb-4">Ntaganira kwitonda theos</div>
+                            <p id="footer-text" class="text-sm text-gray-muted leading-relaxed">
+                                Building the next generation of software solutions in Africa.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-16">
+                            <div>
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">Connect</h5>
+                                <ul class="text-sm font-bold space-y-4">
+                                    <li><a href="https://github.com/kwitonda-theos" target="_blank" class="hover:text-gray-400 transition">GitHub</a></li>
+                                    <li><a href="https://www.linkedin.com/in/ntaganira-kwitonda-theos" target="_blank" class="hover:text-gray-400 transition">LinkedIn</a></li>
+                                    <li><a href="https://www.instagram.com/kwitonda.theos/" target="_blank" class="hover:text-gray-400 transition">Instagram</a></li>
+                                    <li><a href="mailto:Kwitondatheos@gmail.com" class="hover:text-gray-400 transition">Email</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">Location</h5>
+                                <p class="text-sm font-bold">Kigali, Rwanda</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="max-w-5xl mx-auto px-6 mt-20 pt-8 border-t border-gray-200 flex justify-between items-center text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                        <div>&copy; 2026 Ntaganira kwitonda theos</div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-user-friends text-[10px]"></i>
+                            <span id="footer-view-count">...</span> <span id="footer-view-label">VISITORS</span>
+                        </div>
+                    </div>
+                </footer>
 
-    <script>
-        // Language Data
-        const translations = {
-            en: {
-                btn: "RW",
-                heroTitle: 'Empowering the future through <span class="text-gray-400">code and data.</span>',
-                heroSubtitle: 'I am <span class="font-bold" style="color: var(--accent-color)">Ntaganira kwitonda theos</span>, a Computer & Software Engineer based in Kigali, Rwanda. I build high-impact solutions that bridge the gap between complex problems and elegant software.',
-                cta: "Get in touch",
-                metric1: "Expected Graduation",
-                metric2: "Advanced Certificate Grade",
-                metric3: "ALX Data Certification",
-                aboutH: "The Narrative",
-                aboutSH: "A journey of technical excellence.",
-                aboutT1: "Driven by a passion for hardware, software development, and problem-solving, I am currently pursuing a degree in Computer & Software Engineering at the University of Rwanda. My mission is to apply academic rigor to real-world engineering challenges.",
-                aboutT2: "From data collection at CIDRA ltd to professional web design and data analytics, I focus on building practical technology solutions that matter.",
-                expH: "Experience",
-                expR: "Data Collector & Enumerator",
-                expD: "Leveraged technical data collection methodologies to gather and process critical information for integrated development and action.",
-                eduH: "Education",
-                eduS1: "B.Sc. in Computer & Software Engineering",
-                eduS2: "Advanced Certificate (PCM)",
-                skillsH: "Technical Mastery",
-                skill1: "Data Analytics",
-                skill2: "Web Development",
-                skill3: "Web Design",
-                skill4: "English Proficiency",
-                contactH: "Direct Message",
-                contactSH: "Have a project in mind? Let's talk.",
-                submitT: "Send Message",
-                footerT: "Building the next generation of software solutions in Africa.",
-                viewL: "VISITORS",
-                visitorL: "Inspired by Emre Varol"
-            },
-            rw: {
-                btn: "EN",
-                heroTitle: 'Wubaka ejo hazaza binyuze muri <span class="text-gray-400">porogaramu na data.</span>',
-                heroSubtitle: 'Nitwa <span class="font-bold" style="color: var(--accent-color)">Ntaganira kwitonda theos</span>, ndi Enjeniyeri muri Mudasobwa na Porogaramu utuye i Kigali mu Rwanda. Nkora ibisubizo bifite ingaruka nziza bikemura ibibazo bikomeye binyuze mu ikoranabuhanga.',
-                cta: "Twandikire",
-                metric1: "Igihe nzarangiriza",
-                metric2: "Amanota y'amashuri yisumbuye",
-                metric3: "Impamyabumenyi ya ALX",
-                aboutH: "Amateka",
-                aboutSH: "Urugendo rw'ubumenyi buhanitse.",
-                aboutT1: "Bitewe n'ubushake mfite mu gukora ibikoresho bya mudasobwa, porogaramu, no gukemura ibibazo, ubu ndimo kwiga Ubwubatsi bwa Mudasobwa na Porogaramu muri Kaminuza y'u Rwanda.",
-                aboutT2: "Kuva mu gukusanya amakuru muri CIDRA ltd kugeza mu guhimba imbuga za internet n'isesenguradata, nshyira imbere gukora ibisubizo bifatika.",
-                expH: "Ubunararibonye",
-                expR: "Ukusanya amakuru n'ubarura",
-                expD: "Nakoresheje uburyo bwa gihanga bwo gukusanya n'isesengura ry'amakuru mu mishinga y'iterambere.",
-                eduH: "Amashuri",
-                eduS1: "Impamyabumenyi y'icyiciro cya kabiri mu bwubatsi bwa mudasobwa",
-                eduS2: "Impamyabumenyi y'amashuri yisumbuye (PCM)",
-                skillsH: "Ubumenyi Buhambaye",
-                skill1: "Isesenguradata",
-                skill2: "Gukora Imbuga",
-                skill3: "Guhimba Imbuga",
-                skill4: "Icyongereza",
-                contactH: "Twandikire",
-                contactSH: "Ufite umushinga? Twawuganiraho.",
-                submitT: "Ohereza ubutumwa",
-                footerT: "Wubaka ibisubizo by'ejo hazaza mu Rwanda no muri Afurika.",
-                viewL: "ABASUYE",
-                visitorL: "Byateguwe mu njyana ya Emre Varol"
-            }
-        };
+                <script>
+                    // Language Data
+                    const translations = {
+                        en: {
+                            btn: "RW",
+                            heroTitle: 'Empowering the future through <span class="text-gray-400">code and data.</span>',
+                            heroSubtitle: 'I am <span class="font-bold" style="color: var(--accent-color)">Ntaganira kwitonda theos</span>, a Computer & Software Engineer based in Kigali, Rwanda. I build high-impact solutions that bridge the gap between complex problems and elegant software.',
+                            cta: "Get in touch",
+                            metric1: "Expected Graduation",
+                            metric2: "Advanced Certificate Grade",
+                            metric3: "ALX Data Certification",
+                            aboutH: "The Narrative",
+                            aboutSH: "A journey of technical excellence.",
+                            aboutT1: "Driven by a passion for hardware, software development, and problem-solving, I am currently pursuing a degree in Computer & Software Engineering at the University of Rwanda. My mission is to apply academic rigor to real-world engineering challenges.",
+                            aboutT2: "From data collection at CIDRA ltd to professional Graphics design and data analytics, I focus on building practical technology solutions that matter.",
+                            expH: "Experience",
+                            expR: "Data Collector & Enumerator",
+                            expD: "Leveraged technical data collection methodologies to gather and process critical information for integrated development and action.",
+                            eduH: "Education",
+                            eduS1: "B.Sc. in Computer & Software Engineering",
+                            eduS2: "Advanced Certificate (PCM)",
+                            skillsH: "Technical Mastery",
+                            skill1: "Data Analysis",
+                            skill2: "Software Engineering",
+                            skill3: "Graphics Design",
+                            skill4: "English Proficiency",
+                            contactH: "Direct Message",
+                            contactSH: "Have a project in mind? Let's talk.",
+                            submitT: "Send Message",
+                            footerT: "Building the next generation of software solutions in Africa.",
+                            viewL: "VISITORS",
+                            visitorL: "Inspired by Emre Varol"
+                        },
+                        rw: {
+                            btn: "EN",
+                            heroTitle: 'Wubaka ejo hazaza binyuze muri <span class="text-gray-400">porogaramu na data.</span>',
+                            heroSubtitle: 'Nitwa <span class="font-bold" style="color: var(--accent-color)">Ntaganira kwitonda theos</span>, ndi Enjeniyeri muri Mudasobwa na Porogaramu utuye i Kigali mu Rwanda. Nkora ibisubizo bifite ingaruka nziza bikemura ibibazo bikomeye binyuze mu ikoranabuhanga.',
+                            cta: "Twandikire",
+                            metric1: "Igihe nzarangiriza",
+                            metric2: "Amanota y'amashuri yisumbuye",
+                            metric3: "Impamyabumenyi ya ALX",
+                            aboutH: "Amateka",
+                            aboutSH: "Urugendo rw'ubumenyi buhanitse.",
+                            aboutT1: "Bitewe n'ubushake mfite mu gukora ibikoresho bya mudasobwa, porogaramu, no gukemura ibibazo, ubu ndimo kwiga Ubwubatsi bwa Mudasobwa na Porogaramu muri Kaminuza y'u Rwanda.",
+                            aboutT2: "Kuva mu gukusanya amakuru muri CIDRA ltd kugeza mu guhimba imbuga za internet n'isesenguradata, nshyira imbere gukora ibisubizo bifatika.",
+                            expH: "Ubunararibonye",
+                            expR: "Ukusanya amakuru n'ubarura",
+                            expD: "Nakoresheje uburyo bwa gihanga bwo gukusanya n'isesengura ry'amakuru mu mishinga y'iterambere.",
+                            eduH: "Amashuri",
+                            eduS1: "Impamyabumenyi y'icyiciro cya kabiri mu bwubatsi bwa mudasobwa",
+                            eduS2: "Impamyabumenyi y'amashuri yisumbuye (PCM)",
+                            skillsH: "Ubumenyi Buhambaye",
+                            skill1: "Data Analysis",
+                            skill2: "Software Engineering",
+                            skill3: "Graphics Design",
+                            skill4: "Icyongereza",
+                            contactH: "Twandikire",
+                            contactSH: "Ufite umushinga? Twawuganiraho.",
+                            submitT: "Ohereza ubutumwa",
+                            footerT: "Wubaka ibisubizo by'ejo hazaza mu Rwanda no muri Afurika.",
+                            viewL: "ABASUYE",
+                            visitorL: "Byateguwe mu njyana ya Emre Varol"
+                        }
+                    };
 
-        let currentLang = 'en';
-        const langToggle = document.getElementById('lang-toggle');
+                    let currentLang = 'en';
+                    const langToggle = document.getElementById('lang-toggle');
 
-        function updateLang() {
-            const t = translations[currentLang];
-            langToggle.innerText = t.btn;
-            document.getElementById('hero-title').innerHTML = t.heroTitle;
-            document.getElementById('hero-subtitle').innerHTML = t.heroSubtitle;
-            document.getElementById('cta-text').innerText = t.cta;
-            document.getElementById('metric-1').innerText = t.metric1;
-            document.getElementById('metric-2').innerText = t.metric2;
-            document.getElementById('metric-3').innerText = t.metric3;
-            document.getElementById('about-heading').innerText = t.aboutH;
-            document.getElementById('about-subheading').innerText = t.aboutSH;
-            document.getElementById('about-text').innerText = t.aboutT1;
-            document.getElementById('about-text-2').innerText = t.aboutT2;
-            document.getElementById('exp-heading').innerText = t.expH;
-            document.getElementById('exp-role').innerText = t.expR;
-            document.getElementById('exp-desc').innerText = t.expD;
-            document.getElementById('edu-heading').innerText = t.eduH;
-            document.getElementById('edu-sub-1').innerText = t.eduS1;
-            document.getElementById('edu-sub-2').innerText = t.eduS2;
-            document.getElementById('skills-heading').innerText = t.skillsH;
-            document.getElementById('skill-1').innerText = t.skill1;
-            document.getElementById('skill-2').innerText = t.skill2;
-            document.getElementById('skill-3').innerText = t.skill3;
-            document.getElementById('skill-4').innerText = t.skill4;
-            document.getElementById('contact-heading').innerText = t.contactH;
-            document.getElementById('contact-subheading').innerText = t.contactSH;
-            document.getElementById('submit-text').innerText = t.submitT;
-            document.getElementById('footer-text').innerText = t.footerT;
-            document.getElementById('view-label').innerText = t.viewL;
-            document.getElementById('visitor-label').innerText = t.visitorL;
-        }
+                    function updateLang() {
+                        const t = translations[currentLang];
+                        langToggle.innerText = t.btn;
+                        document.getElementById('hero-title').innerHTML = t.heroTitle;
+                        document.getElementById('hero-subtitle').innerHTML = t.heroSubtitle;
+                        document.getElementById('cta-text').innerText = t.cta;
+                        document.getElementById('metric-1').innerText = t.metric1;
+                        document.getElementById('metric-2').innerText = t.metric2;
+                        document.getElementById('metric-3').innerText = t.metric3;
+                        document.getElementById('about-heading').innerText = t.aboutH;
+                        document.getElementById('about-subheading').innerText = t.aboutSH;
+                        document.getElementById('about-text').innerText = t.aboutT1;
+                        document.getElementById('about-text-2').innerText = t.aboutT2;
+                        document.getElementById('exp-heading').innerText = t.expH;
+                        document.getElementById('exp-role').innerText = t.expR;
+                        document.getElementById('exp-desc').innerText = t.expD;
+                        document.getElementById('edu-heading').innerText = t.eduH;
+                        document.getElementById('edu-sub-1').innerText = t.eduS1;
+                        document.getElementById('edu-sub-2').innerText = t.eduS2;
+                        document.getElementById('skills-heading').innerText = t.skillsH;
+                        document.getElementById('skill-1').innerText = t.skill1;
+                        document.getElementById('skill-2').innerText = t.skill2;
+                        document.getElementById('skill-3').innerText = t.skill3;
+                        document.getElementById('skill-4').innerText = t.skill4;
+                        document.getElementById('contact-heading').innerText = t.contactH;
+                        document.getElementById('contact-subheading').innerText = t.contactSH;
+                        document.getElementById('submit-text').innerText = t.submitT;
+                        document.getElementById('footer-text').innerText = t.footerT;
+                        document.getElementById('view-label').innerText = t.viewL;
+                        document.getElementById('footer-view-label').innerText = t.viewL;
+                    }
 
-        langToggle.addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'rw' : 'en';
-            updateLang();
-        });
+                    langToggle.addEventListener('click', () => {
+                        currentLang = currentLang === 'en' ? 'rw' : 'en';
+                        updateLang();
+                    });
 
-        // Theme Toggle Logic
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const body = document.body;
+                    // Theme Toggle Logic
+                    const themeToggle = document.getElementById('theme-toggle');
+                    const themeIcon = document.getElementById('theme-icon');
+                    const body = document.body;
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light');
-            const isLight = body.classList.contains('light');
-            themeIcon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        });
+                    themeToggle.addEventListener('click', () => {
+                        body.classList.toggle('light');
+                        const isLight = body.classList.contains('light');
+                        themeIcon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+                        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+                    });
 
-        // Initialize Theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            body.classList.add('light');
-            themeIcon.className = 'fas fa-moon';
-        } else {
-            themeIcon.className = 'fas fa-sun';
-        }
+                    // Initialize Theme
+                    const savedTheme = localStorage.getItem('theme');
+                    if (savedTheme === 'light') {
+                        body.classList.add('light');
+                        themeIcon.className = 'fas fa-moon';
+                    } else {
+                        themeIcon.className = 'fas fa-sun';
+                    }
 
+                    // View Counter logic
+                    async function updateCounter() {
+                        try {
+                            // Using a new key to 'reset' the counter to 0 as requested
+                            const namespace = 'kwitonda-theos.github.io';
+                            const key = 'ntaganira-theos-cv-final';
+
+                            // Only increment if it's a new session
+                            const isNewVisit = !sessionStorage.getItem('visited');
+                            const mode = isNewVisit ? 'hit' : 'get';
+
+                            const response = await fetch(`https://api.countapi.xyz/${mode}/${namespace}/${key}`);
+                            const data = await response.json();
+
+                            const formattedCount = data.value.toLocaleString();
+                            document.getElementById('view-count').innerText = formattedCount;
+                            document.getElementById('footer-view-count').innerText = formattedCount;
+
+                            if (isNewVisit) {
+                                sessionStorage.setItem('visited', 'true');
+                            }
+                        } catch (error) {
+                            console.error('Counter error:', error);
+                            // Fallback display if API is unreachable
+                            document.getElementById('view-count').innerText = '0';
+                            document.getElementById('footer-view-count').innerText = '0';
+                        }
+                    }
+
+                    updateCounter();
+                    </script>
+            </body>
+            </html>
         // View Counter logic
         async function updateCounter() {
             try {
+<<<<<<< HEAD
                 const namespace = 'kwitonda-theos.github.io';
                 const key = 'ntaganira-theos-cv';
                 
@@ -380,16 +562,44 @@
                 
                 document.getElementById('view-count').innerText = data.value.toLocaleString();
                 
+=======
+                // Using a new key to 'reset' the counter to 0 as requested
+                const namespace = 'kwitonda-theos.github.io';
+                const key = 'ntaganira-theos-cv-final';
+
+                // Only increment if it's a new session
+                const isNewVisit = !sessionStorage.getItem('visited');
+                const mode = isNewVisit ? 'hit' : 'get';
+
+                const response = await fetch(`https://api.countapi.xyz/${mode}/${namespace}/${key}`);
+                const data = await response.json();
+
+                const formattedCount = data.value.toLocaleString();
+                document.getElementById('view-count').innerText = formattedCount;
+                document.getElementById('footer-view-count').innerText = formattedCount;
+
+>>>>>>> main
                 if (isNewVisit) {
                     sessionStorage.setItem('visited', 'true');
                 }
             } catch (error) {
                 console.error('Counter error:', error);
+<<<<<<< HEAD
                 document.getElementById('view-count').innerText = '1,200+';
             }
         }
         
         updateCounter();
     </script>
+=======
+                // Fallback display if API is unreachable
+                document.getElementById('view-count').innerText = '0';
+                document.getElementById('footer-view-count').innerText = '0';
+            }
+        }
+
+        updateCounter();
+        </script>
+>>>>>>> main
 </body>
 </html>
