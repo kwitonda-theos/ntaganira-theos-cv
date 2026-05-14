@@ -46,6 +46,9 @@
         .hero-wrap {
             background: radial-gradient(circle at 74% 42%, rgba(115, 94, 255, 0.18), transparent 46%), linear-gradient(90deg, #020b24 0%, #030f32 60%, #05163f 100%);
         }
+        body.light .hero-wrap {
+            background: radial-gradient(circle at 74% 42%, rgba(115, 94, 255, 0.12), transparent 46%), linear-gradient(90deg, #f5f7ff 0%, #f0f4ff 60%, #eaf0ff 100%);
+        }
         .hero-grid {
             display: grid;
             grid-template-columns: minmax(0, 1.25fr) minmax(280px, 420px);
@@ -168,6 +171,13 @@
         body.light .site-nav::before {
             background: none;
         }
+        body.light .hero-image-shell {
+            border: 1px solid rgba(115, 94, 255, 0.25);
+            background: linear-gradient(150deg, rgba(245, 247, 255, 0.9), rgba(240, 244, 255, 0.8));
+        }
+        body.light .hero-image-shell img {
+            border: 1px solid rgba(115, 94, 255, 0.4);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -188,10 +198,6 @@
                 <button id="lang-toggle" class="lang-btn border px-3 py-1 text-xs font-bold uppercase rounded">
                     RW
                 </button>
-                <div class="flex items-center gap-2 text-xs font-bold bg-subtle px-3 py-1 rounded-full border border-subtle">
-                    <i class="fas fa-user-friends text-[10px]"></i>
-                    <span id="view-count">...</span> <span id="view-label">VISITORS</span>
-                </div>
             </div>
         </div>
     </nav>
@@ -513,7 +519,6 @@
             document.getElementById('contact-subheading').innerText = t.contactSH;
             document.getElementById('submit-text').innerText = t.submitT;
             document.getElementById('footer-text').innerText = t.footerT;
-            document.getElementById('view-label').innerText = t.viewL;
             document.getElementById('footer-view-label').innerText = t.viewL;
         }
 
@@ -564,7 +569,6 @@
             visitorCountRef.on('value', (snapshot) => {
                 const count = snapshot.val() || 0;
                 const formattedCount = count.toLocaleString();
-                document.getElementById('view-count').innerText = formattedCount;
                 document.getElementById('footer-view-count').innerText = formattedCount;
             });
 
