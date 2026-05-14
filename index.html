@@ -201,7 +201,7 @@
         <div class="max-w-6xl mx-auto px-6 pt-20 pb-20 hero-grid">
             <div class="hero-copy text-left">
                 <h1 id="hero-title" class="hero-title text-5xl md:text-7xl font-extrabold mb-6">
-                    Empowering the future through <span class="text-gray-500">code and data.</span>
+                    Providing solutions to real world problems through <span class="text-gray-500">code and data.</span>
                 </h1>
                 <p id="hero-subtitle" class="text-xl md:text-2xl text-gray-muted leading-relaxed mb-8">
                     I am <span class="font-bold" style="color: var(--accent-color)">Ntaganira kwitonda theos</span>, a Computer & Software Engineer based in Kigali, Rwanda. I build high-impact solutions that bridge the gap between complex problems and elegant software.
@@ -248,7 +248,7 @@
                 Driven by a passion for hardware, software development, and problem-solving, I am currently pursuing a degree in Computer & Software Engineering at the University of Rwanda. My mission is to apply academic rigor to real-world engineering challenges.
             </p>
             <p id="about-text-2" class="text-xl text-gray-muted leading-relaxed">
-                From data collection at CIDRA ltd to professional Graphics design and data analytics, I focus on building practical technology solutions that matter.
+                From data collection at CIDRA ltd to backend web development and data analytics, I focus on building practical technology solutions that matter.
             </p>
         </div>
     </section>
@@ -292,6 +292,18 @@
                 <div class="p-6">
                     <h4 id="project-1-title" class="text-lg font-extrabold mb-2">STWMS</h4>
                     <p id="project-1-desc" class="text-xs text-gray-muted leading-relaxed">STWMS integrates a smart Web Dashboard for monitoring, a Mobile App for citizen engagement, AI for predictive waste collection, and IoT-enabled Smart toilets for toilet-level tracking — creating a cleaner, more efficient, and sustainable waste ecosystem.</p>
+                </div>
+            </a>
+            <a href="https://simba-3-xmna.vercel.app/" target="_blank" class="group block bg-subtle rounded-xl overflow-hidden border border-subtle hover:border-accent transition-all duration-500 transform hover:-translate-y-2">
+                <div class="aspect-video overflow-hidden relative">
+                    <img src="simba.png" alt="Simba Website" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-[10px] font-bold border border-white/20 uppercase tracking-wider">View Project</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h4 id="project-2-title" class="text-lg font-extrabold mb-2">Simba Website</h4>
+                    <p id="project-2-desc" class="text-xs text-gray-muted leading-relaxed">A modern, revamped website for Simba that replaces their legacy platform with improved user experience, responsive design, and enhanced functionality.</p>
                 </div>
             </a>
         </div>
@@ -414,6 +426,8 @@
                 projectsH: "Projects I have worked on",
                 project1Title: "STWMS",
                 project1Desc: "improves waste management in technological way",
+                project2Title: "Simba Website",
+                project2Desc: "A modern, revamped website for Simba that replaces their legacy platform with improved user experience, responsive design, and enhanced functionality.",
                 skillsH: "Technical Mastery",
                 skill1: "Data Analysis",
                 skill2: "Software Engineering",
@@ -447,6 +461,8 @@
                 projectsH: "Imishinga nakoze",
                 project1Title: "STWMS",
                 project1Desc: "Itezimbere icungwa ry'imyanda binyuze mu ikoranabuhanga",
+                project2Title: "Simba Website",
+                project2Desc: "Imbuga nshya, isoze ku ngero y'ikigina, yisumbuja ikoranabuhanga ryamakuru n'ikoranabuhanga rikomeye.",
                 skillsH: "Ubumenyi Buhambaye",
                 skill1: "Data Analysis",
                 skill2: "Software Engineering",
@@ -486,6 +502,8 @@
             document.getElementById('projects-heading').innerText = t.projectsH;
             document.getElementById('project-1-title').innerText = t.project1Title;
             document.getElementById('project-1-desc').innerText = t.project1Desc;
+            document.getElementById('project-2-title').innerText = t.project2Title;
+            document.getElementById('project-2-desc').innerText = t.project2Desc;
             document.getElementById('skills-heading').innerText = t.skillsH;
             document.getElementById('skill-1').innerText = t.skill1;
             document.getElementById('skill-2').innerText = t.skill2;
