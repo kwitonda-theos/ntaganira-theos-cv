@@ -147,10 +147,11 @@
             color: var(--bg-color);
         }
         .site-nav {
-            position: absolute;
+            position: fixed;
             top: 1rem;
-            left: 0;
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(calc(100% - 2rem), 72rem);
             z-index: 50;
             pointer-events: none;
         }
@@ -173,14 +174,6 @@
             inset: 0;
             background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 42%), radial-gradient(circle at top right, rgba(115, 94, 255, 0.2), transparent 36%);
             pointer-events: none;
-        }
-        .site-nav::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            border-radius: 9999px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
         }
         .site-nav a,
         .site-nav button {
@@ -228,7 +221,7 @@
 <body class="antialiased">
     <!-- Header/Nav -->
     <nav class="site-nav">
-        <div class="max-w-6xl mx-auto px-5 py-3 flex justify-between items-center gap-6">
+        <div class="px-5 py-3 flex justify-between items-center gap-6">
             <div class="font-extrabold text-xl tracking-tighter">Ntaganira Kwitonda Theos</div>
             <div class="flex items-center gap-4 md:gap-6">
                 <div class="hidden md:flex gap-6 text-sm font-medium">
@@ -249,7 +242,7 @@
 
     <!-- Hero Section -->
     <section class="hero-wrap border-b border-subtle">
-        <div class="max-w-6xl mx-auto px-6 pt-32 pb-20 hero-grid">
+        <div class="max-w-6xl mx-auto px-6 pt-36 pb-20 hero-grid">
             <div class="hero-copy text-left">
                 <h1 id="hero-title" class="hero-title text-5xl md:text-7xl font-extrabold mb-6">
                     Providing solutions to real world problems through <span class="text-gray-500">code and data.</span>
